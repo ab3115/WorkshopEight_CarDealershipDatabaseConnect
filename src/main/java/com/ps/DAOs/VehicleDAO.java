@@ -1,12 +1,12 @@
 package com.ps.DAOs;
 
-import com.ps.DAOs.interfaces.VehicleInt;
-import com.ps.models.Vehicle;
-import org.apache.commons.dbcp2.BasicDataSource;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.ps.DAOs.interfaces.VehicleInt;
+import com.ps.models.Vehicle;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 public class VehicleDAO implements VehicleInt {
 
@@ -37,7 +37,7 @@ public class VehicleDAO implements VehicleInt {
                 int year = resultSet.getInt("year");
                 String make = resultSet.getString("make");
                 String model = resultSet.getString("model");
-                String vehicle_Type = resultSet.getString("vehicle_type");
+                String vehicle_Type = resultSet.getString("vehicleType");
                 String color = resultSet.getString("color");
                 int odometer = resultSet.getInt("odometer");
                 double price = resultSet.getDouble("price");
@@ -79,7 +79,7 @@ public class VehicleDAO implements VehicleInt {
                             resultSet.getInt("year"),
                             resultSet.getString("make"),
                             resultSet.getString("model"),
-                            resultSet.getString("vehicle_type"),
+                            resultSet.getString("vehicleType"),
                             resultSet.getString("color"),
                             resultSet.getInt("odometer"),
                             resultSet.getDouble("price")
@@ -118,7 +118,7 @@ public class VehicleDAO implements VehicleInt {
                             resultSet.getInt("year"),
                             resultSet.getString("make"),
                             resultSet.getString("model"),
-                            resultSet.getString("vehicle_type"),
+                            resultSet.getString("vehicleType"),
                             resultSet.getString("color"),
                             resultSet.getInt("odometer"),
                             resultSet.getDouble("price")
@@ -159,7 +159,7 @@ public class VehicleDAO implements VehicleInt {
                             resultSet.getInt("year"),
                             resultSet.getString("make"),
                             resultSet.getString("model"),
-                            resultSet.getString("vehicle_type"),
+                            resultSet.getString("vehicleType"),
                             resultSet.getString("color"),
                             resultSet.getInt("odometer"),
                             resultSet.getDouble("price")
@@ -202,7 +202,7 @@ public class VehicleDAO implements VehicleInt {
                             resultSet.getInt("year"),
                             resultSet.getString("make"),
                             resultSet.getString("model"),
-                            resultSet.getString("vehicle_type"),
+                            resultSet.getString("vehicleType"),
                             resultSet.getString("color"),
                             resultSet.getInt("odometer"),
                             resultSet.getDouble("price")
@@ -244,7 +244,7 @@ public class VehicleDAO implements VehicleInt {
                             resultSet.getInt("year"),
                             resultSet.getString("make"),
                             resultSet.getString("model"),
-                            resultSet.getString("vehicle_type"),
+                            resultSet.getString("vehicleType"),
                             resultSet.getString("color"),
                             resultSet.getInt("odometer"),
                             resultSet.getDouble("price")
@@ -287,7 +287,7 @@ public class VehicleDAO implements VehicleInt {
                             resultSet.getInt("year"),
                             resultSet.getString("make"),
                             resultSet.getString("model"),
-                            resultSet.getString("vehicle_type"),
+                            resultSet.getString("vehicleType"),
                             resultSet.getString("color"),
                             resultSet.getInt("odometer"),
                             resultSet.getDouble("price")
