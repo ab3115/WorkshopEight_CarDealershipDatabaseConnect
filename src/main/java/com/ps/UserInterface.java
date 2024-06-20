@@ -187,7 +187,10 @@ public class UserInterface {
     }
 
     private static void processRemoveVehicle(){
-
+        System.out.print("Enter vehicle vin:");
+        int vin = scanner.nextInt();
+        vehicleDAO.removeVehicle(vin);
+        System.out.println("Vehicle removed successfully!");
     }
 
     private static void processManageSales(){
