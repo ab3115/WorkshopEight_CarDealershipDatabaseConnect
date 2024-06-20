@@ -313,7 +313,7 @@ public class VehicleDAO implements VehicleInt {
 
                 Connection connection = data_Source.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(
-                        "INSERT INTO vehicles(vin, make, model, year, color) VALUES(?,?,?,?,?)",
+                        "INSERT INTO vehicles(vin,year, make, model,type, color, mileage, price) VALUES(?,?,?,?,?,?,?,?)",
                         Statement.RETURN_GENERATED_KEYS
 
                 );

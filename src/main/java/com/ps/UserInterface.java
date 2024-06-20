@@ -163,6 +163,27 @@ public class UserInterface {
 
     private static void processAddVehicles(){
 
+        System.out.println("Enter vin:");
+        int vin = scanner.nextInt();
+        System.out.println("Enter year: ");
+        int year = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter make: ");
+        String make = scanner.nextLine();
+        System.out.println("Enter model: ");
+        String model = scanner.nextLine();
+        System.out.println("Enter type:");
+        String type = scanner.nextLine();
+        System.out.println("Enter color: ");
+        String color = scanner.nextLine();
+        scanner.nextLine();
+        System.out.println("Enter mileage:");
+        int mileage = scanner.nextInt();
+        System.out.println("Enter price:");
+        double price = scanner.nextDouble();
+        Vehicle vehicle = new Vehicle(vin,year, make, model, type, color, mileage, price);
+        vehicleDAO.addVehicle(vehicle);
+        System.out.println("Vehicle added successfully!");
     }
 
     private static void processRemoveVehicle(){
