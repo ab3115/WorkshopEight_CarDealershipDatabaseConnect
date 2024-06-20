@@ -135,7 +135,7 @@ public class VehicleDAO implements VehicleInt {
 
 
     @Override
-    public List<Vehicle> getVehiclesByYear(int startYear, int endYear) {
+    public List<Vehicle> getVehiclesByYear(int min, int max) {
 
         List<Vehicle> vehicles = new ArrayList<>();
 
@@ -146,8 +146,8 @@ public class VehicleDAO implements VehicleInt {
 
         ) {
 
-            preparedStatement.setInt(1, startYear);
-            preparedStatement.setInt(2, endYear);
+            preparedStatement.setInt(1, min);
+            preparedStatement.setInt(2, max);
 
             try (
                     ResultSet resultSet = preparedStatement.executeQuery();

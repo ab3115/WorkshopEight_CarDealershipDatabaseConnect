@@ -35,21 +35,146 @@ public class UserInterface {
     public static void display(String[] args) {
 
         init(args);
+
+        int input;
+
+        do {
+
+            System.out.println("Welcome! Please choose one of the following:");
+            System.out.println("1) Search vehicle");
+            System.out.println("2) Add vehicles");
+            System.out.println("3) Remove vehicle");
+            System.out.println("4) Manage Sales");
+            System.out.println("5) Manage Leases");
+            System.out.println("0) Exit");
+
+            input = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (input) {
+                case 1:
+                    processSearchVehicles();
+                    break;
+                case 2:
+                    processAddVehicles();
+                    break;
+                case 3:
+                    processRemoveVehicle();
+                    break;
+                case 4:
+                    processManageSales();
+                    break;
+                case 5:
+                    processManageLeases();
+                case 0:
+                    System.out.println("Exit Dealership");
+                    break;
+                default:
+                    System.out.println("Invalid choice, please try again.");
+            }
+        } while (input != 0);
     }
 
-    private static void processSearchVehicles(){
 
+    private static void processSearchVehicles(){
+        int input;
+
+        do {
+
+            System.out.println("Search Vehicles:");
+            System.out.println("1) Show all Vehicles");
+            System.out.println("2) Get vehicle by price range");
+            System.out.println("3) Get vehicle by Make & Model");
+            System.out.println("4) Get vehicle by year range");
+            System.out.println("5) Get vehicle by color");
+            System.out.println("6) Get vehicle by mileage");
+            System.out.println("7) Get vehicle by type");
+            System.out.println("0) Return");
+
+            input = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (input) {
+
+                case 1:
+
+                    List<Vehicle> vehicle_list = vehicleDAO.getAllVehicles();
+
+                    for (Vehicle vehicle: vehicle_list) {
+                        System.out.println(vehicle);
+                    }
+
+                    break;
+
+                case 3:
+
+                    System.out.println("Enter make:");
+                    String make = scanner.nextLine();
+                    System.out.println("Enter model:");
+                    String model = scanner.nextLine();
+                    List<Vehicle> vehiclesByMakeModel = vehicleDAO.getVehiclesByMakeModel(make, model);
+                    vehiclesByMakeModel.forEach(System.out::println);
+                    break;
+
+                case 4:
+
+                    System.out.println("Enter min year:");
+                    int min = scanner.nextInt();
+                    System.out.println("Enter max year:");
+                    int max = scanner.nextInt();
+                    List<Vehicle> vehiclesByYearRange = vehicleDAO.getVehiclesByYear(min, max);
+                    vehiclesByYearRange.forEach(System.out::println);
+                    break;
+
+                case 5:
+
+                    System.out.println("Enter color ");
+                    String color = scanner.nextLine();
+                    List<Vehicle> vehiclesByColor = vehicleDAO.getVehiclesByColor(color);
+                    vehiclesByColor.forEach(System.out::println);
+                    break;
+
+                case 6:
+
+                    System.out.println("Enter min mileage:");
+                    int minimum = scanner.nextInt();
+                    System.out.println("Enter max mileage:");
+                    int maximum = scanner.nextInt();
+                    List<Vehicle> vehiclesByMileageRange = vehicleDAO.getVehiclesByMileage(minimum, maximum);
+                    vehiclesByMileageRange.forEach(System.out::println);
+                    break;
+
+                case 7:
+
+                    System.out.println("Enter vehicle type:");
+                    String type= scanner.nextLine();
+                    List<Vehicle> vehiclesByType = vehicleDAO.getVehiclesByType(type);
+                    vehiclesByType.forEach(System.out::println);
+                    break;
+
+                case 0:
+                    System.out.println("Going back to last screen");
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+        } while (input != 0);
     }
 
     private static void processAddVehicles(){
 
     }
 
-    private static void prccessManageSales(){
+    private static void processRemoveVehicle(){
 
     }
 
+    private static void processManageSales(){
 
+    }
 
+    private static void processManageLeases() {
+
+    }
 
 }
